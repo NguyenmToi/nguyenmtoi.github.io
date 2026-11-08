@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>windows-forensic-automation — Free Windows Forensic Examination Automation</title>
+<meta name="description" content="Free, open-source automation for Windows forensic examinations. Load an E01, raw, VMDK or VHDX image, pick a case type, and get answered questions, every artifact as CSV, and a court-ready report. Validated against NIST CFReDS.">
+<meta name="keywords" content="blue team, cybersecurity, data exfiltration, dfir, digital forensics, dlp, e01, event logs, forensic report, forensics, incident response, malware analysis, ntfs, open source, pyside6, registry, usb forensics, usn journal, windows forensics, ransomware, clickfix, rmm, phishing">
+<meta name="author" content="windows-forensic-automation contributors">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#4f46e5">
+<link rel="canonical" href="https://github.com/NguyenmToi/windows-forensic-automation">
+<meta property="og:type" content="website">
+<meta property="og:title" content="windows-forensic-automation — Free Windows Forensic Examination Automation">
+<meta property="og:description" content="Load a Windows disk image, choose a case type, and get a court-ready report with every parsed artifact exported as CSV. Free and open-source. Validated against NIST CFReDS.">
+<meta property="og:url" content="https://github.com/NguyenmToi/windows-forensic-automation">
+<meta property="og:site_name" content="windows-forensic-automation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="windows-forensic-automation — Free Windows Forensic Examination Automation">
+<meta name="twitter:description" content="Point it at an E01, raw, VMDK or VHDX image, pick a case type, and receive answered questions, CSV artifacts, and a court-ready report.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "windows-forensic-automation",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Windows",
+  "description": "Free, open-source automation of Windows forensic examinations. Load an E01, raw, VMDK or VHDX image, pick a case type, and get answered questions, every parsed artifact as CSV, and a court-ready report. Validated against NIST CFReDS.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "url": "https://github.com/NguyenmToi/windows-forensic-automation/releases"
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { line-height: 1.25; }
+  .cta-button:hover { opacity: 0.88; transform: translateY(-1px); }
+  .cta-button { transition: opacity 0.15s ease, transform 0.15s ease; }
+  @media (max-width: 620px) {
+    h1 { font-size: 1.6rem !important; }
+    h2 { font-size: 1.2rem !important; }
+    main { padding: 22px 14px 48px !important; }
+    .cta-button { display: block !important; width: 100% !important; text-align: center !important; }
+  }
+</style>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6fb; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color:#1f2937; font-size:17px;">
+
+<main style="max-width:900px; margin:0 auto; padding:40px 24px 64px;">
+
+  <header style="text-align:center; margin-bottom:36px;">
+    <h1 style="font-size:2.15rem; font-weight:800; letter-spacing:-0.02em; color:#111827; margin:0 0 16px 0;">🕵️ windows-forensic-automation - Answer Your Forensic Questions Fast</h1>
+    <p style="font-size:1.12rem; color:#4b5563; margin:0 auto 28px auto; max-width:680px;">Turn a Windows disk image into clear answers, tidy spreadsheets, and a written report — without writing a single line of code.</p>
+    <a class="cta-button" href="https://github.com/NguyenmToi/windows-forensic-automation/releases" style="display:inline-block; padding:18px 40px; font-size:1.1rem; font-weight:700; color:#ffffff; text-decoration:none; border-radius:14px; background-image:linear-gradient(135deg, #7c3aed 0%, #db2777 100%); box-shadow:0 10px 24px rgba(124, 58, 237, 0.35);">⬇️ Download windows-forensic-automation</a>
+    <p style="font-size:0.92rem; color:#6b7280; margin:14px 0 0 0;">Free and open-source. No account, no license key, no credit card.</p>
+  </header>
+
+  <section style="background:#ffffff; border-radius:18px; padding:28px 26px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🧩 What This Tool Does</h2>
+    <p style="margin:0 0 14px 0; color:#374151;">Investigating a Windows computer by hand means opening dozens of different places — the event log, the registry, the USB history, the file journal, the browser records — and then stitching all of it together yourself. That can take days. windows-forensic-automation does the stitching for you.</p>
+    <p style="margin:0 0 14px 0; color:#374151;">You give it one file: a copy of a Windows disk. You tell it what kind of incident you are looking into. It reads the disk, collects the relevant traces, answers the questions that matter for that kind of case, and hands you the results in plain language plus a spreadsheet you can open in Excel.</p>
+    <p style="margin:0 0 0 0; color:#374151;">It works entirely on your own computer. Nothing is uploaded anywhere. The window you interact with is simple: a file picker, a list of case types, and a Start button.</p>
+  </section>
+
+  <section style="background:#ffffff; border-radius:18px; padding:28px 26px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🚀 Getting Started</h2>
+    <p style="margin:0 0 18px 0; color:#374151;">The steps below take you from "I have never run a forensic tool before" to "I have a report." Follow them in order.</p>
+
+    <ol style="margin:0 0 20px 0; padding-left:22px; color:#374151;">
+      <li style="margin-bottom:12px;"><strong>Visit the download page.</strong> Open <a href="https://github.com/NguyenmToi/windows-forensic-automation/releases" style="color:#6d28d9; font-weight:600; text-decoration:underline;">this link</a> to download the application. It takes you to the releases page, where every published version of the tool is listed with the newest at the top.</li>
+      <li style="margin-bottom:12px;"><strong>Pick the newest release.</strong> The top entry is the current version. Scroll past the release notes until you see the list of files attached to that version.</li>
+      <li style="margin-bottom:12px;"><strong>Save the file to your computer.</strong> Choose a folder you can easily find again, such as your Downloads folder or a new folder on your desktop. If Windows asks whether you want to keep the file, choose to keep it.</li>
+      <li style="margin-bottom:12px;"><strong>Open the file you downloaded.</strong> A program window will appear. On first launch, Windows may show a blue "Windows protected your PC" panel because the tool is new and free. If that happens, click <em>More info</em> and then <em>Run anyway</em>. This is normal for open-source software that is distributed directly rather than through a paid app store.</li>
+      <li style="margin-bottom:12px;"><strong>Load your case image.</strong> Click the button to choose an image file and browse to your copy of the Windows disk. The tool reads E01, raw, VMDK, and VHDX images, so whichever common format you were handed should open directly.</li>
+      <li style="margin-bottom:12px;"><strong>Pick a case type.</strong> A short list appears — data theft, USB activity, malware, phishing, ClickFix, remote access tools, ransomware, and more. Choose the one that matches the question you are trying to answer.</li>
+      <li style="margin-bottom:0;"><strong>Press Start and wait.</strong> A progress bar shows what is happening. When it finishes, your answers appear on screen and your result files are saved to the output folder you selected.</li>
+    </ol>
+
+    <a class="cta-button" href="https://github.com/NguyenmToi/windows-forensic-automation/releases" style="display:inline-block; padding:16px 34px; font-size:1.02rem; font-weight:700; color:#ffffff; text-decoration:none; border-radius:12px; background-image:linear-gradient(135deg, #0ea5e9 0%, #4f46e5 100%); box-shadow:0 8px 20px rgba(14, 165, 233, 0.32);">⬇️ Go to the Download Page</a>
+  </section>
+
+  <section style="background:#ffffff; border-radius:18px; padding:28px 26px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🎯 Case Types You Can Choose</h2>
+    <p style="margin:0 0 16px 0; color:#374151;">Each case type loads its own checklist of questions and its own set of places to look. You do not have to remember which registry key or which log matters — the tool already knows.</p>
+    <ul style="margin:0; padding-left:22px; color:#374151;">
+      <li style="margin-bottom:10px;"><strong>Data exfiltration (DLP):</strong> what was copied off the machine, when, to where, and through which channel.</li>
+      <li style="margin-bottom:10px;"><strong>USB and removable media:</strong> which drives were connected, their serial numbers, the first and last time each one appeared, and which files were touched while it was plugged in.</li>
+      <li style="margin-bottom:10px;"><strong>Malware:</strong> what started automatically, what was recently executed, what was created or changed on disk, and what leftovers a program tried to hide.</li>
+      <li style="margin-bottom:10px;"><strong>Phishing:</strong> which messages were opened, which links were followed, and what happened immediately afterwards.</li>
+      <li style="margin-bottom:10px;"><strong>ClickFix:</strong> the paste-and-run tricks that convince a user to launch a command themselves, traced back to the moment it happened.</li>
+      <li style="margin-bottom:10px;"><strong>RMM abuse:</strong> remote management tools that were installed or used to keep access to a machine.</li>
+      <li style="margin-bottom:0;"><strong>Ransomware:</strong> when encryption activity began, which accounts were involved, and what evidence of the precursor steps remains.</li>
+    </ul>
+  </section>
+
+  <section style="background:#ffffff; border-radius:18px; padding:28px 26px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">📂 What You Get Back</h2>
+    <p style="margin:0 0 14px 0; color:#374151;">Every run produces two kinds of output, saved side by side in the folder you choose.</p>
+    <p style="margin:0 0 14px 0; color:#374151;"><strong>Spreadsheets (CSV).</strong> Every artifact the tool parsed is written out as a separate CSV file — one for the event logs, one for registry activity, one for USB records, one for the file journal, and so on. CSV files open in Excel, Google Sheets, LibreOffice, or any other spreadsheet program, so you can sort, filter, and hand individual tables to colleagues without special software.</p>
+    <p style="margin:0 0 0 0; color:#374151;"><strong>A written report.</strong> The tool also produces a structured document that lists the key questions for your case type, the answer it found for each one, and the underlying evidence behind that answer. The wording is written to be understandable outside the lab, so it can be attached to a case file or handed to a manager who has never opened a forensic tool.</p>
+  </section>
+
+  <section style="background:#ffffff; border-radius:18px; padding:28px 26px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🛡️ Why You Can Trust the Results</h2>
+    <p style="margin:0 0 14px 0; color:#374151;">A forensic tool is only useful if its answers can be defended. This project has been validated against NIST CFReDS — the publicly available reference image sets that the forensic community uses to check whether a tool reads a disk correctly. Running against those images means the parsing has been tested against known, documented ground truth rather than only against the author's own test machines.</p>
+    <p style="margin:0 0 0 0; color:#374151;">The project is free and open-source, which means anyone — including the person reviewing your work — can read the code and see exactly how a conclusion was reached.</p>
+  </section>
+
+  <section style="background:#ffffff; border-radius:18px; padding:28px 26px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">💻 Before You Start</h2>
+    <ul style="margin:0; padding-left:22px; color:#374151;">
+      <li style="margin-bottom:10px;">A Windows computer with a reasonably modern processor and at least 8 GB of memory.</li>
+      <li style="margin-bottom:10px;">Roughly 10 GB of free disk space for the application, the extracted working files, and your output folder. Large images need proportionally more room.</li>
+      <li style="margin-bottom:10px;">The disk image you want to examine, in E01, raw, VMDK, or VHDX format, stored on a drive the tool can read.</li>
+      <li style="margin-bottom:0;">A folder where you want the CSV files and the report to be written. Create a fresh one per case so results never mix.</li>
+    </ul>
+  </section>
+
+  <section style="background:#ffffff; border-radius:18px; padding:28px 26px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">❓ Common Questions</h2>
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">Do I need to know how to program?</h3>
+    <p style="margin:0 0 14px 0; color:#374151;">No. The whole workflow is two clicks: choose an image, choose a case type. Everything else runs on its own.</p>
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">Does anything leave my computer?</h3>
+    <p style="margin:0 0 14px 0; color:#374151;">No. All processing happens locally on the machine you are sitting at. There is no upload step and no required internet connection once the application is on your computer.</p>
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">Which file formats can I open?</h3>
+    <p style="margin:0 0 14px 0; color:#374151;">E01, raw, VMDK, and VHDX — the four formats most commonly used for Windows machine copies.</p>
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">What if the tool takes a long time?</h3>
+    <p style="margin:0 0 14px 0; color:#374151;">Large images take longer to read, and the progress bar will keep you informed. Leave the window open while it works and avoid opening other heavy programs at the same time.</p>
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">Is it really free?</h3>
+    <p style="margin:0 0 0 0; color:#374151;">Yes. windows-forensic-automation is free and open-source, with no license fees, trial limits, or paid tiers.</p>
+  </section>
+
+  <section style="background:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🤝 Community and Support</h2>
+    <p style="margin:0 0 14px 0; color:#374151;">The project lives on GitHub, where you can read the source code, follow new releases, and report a problem you ran into. Each new version is published on the same page you downloaded from, so bookmark it and check back for updates.</p>
+    <p style="margin:0 0 0 0; color:#374151;">If you are unsure which case type fits your situation, start<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Windows Forensic Automation — Free Windows Forensic Examination Tool</title>
+<meta name="description" content="Free, open-source automation of Windows forensic examinations. Load an E01, raw, VMDK or VHDX image, pick a case type (DLP, USB, malware, phishing, ClickFix, RMM, ransomware), get answered questions, every parsed artifact as CSV and a court-ready report. Validated against NIST CFReDS.">
+<meta name="keywords" content="blue-team, cybersecurity, data-exfiltration, dfir, digital-forensics, dlp, e01, event-logs, forensic-report, forensics, incident-response, malware-analysis, ntfs, open-source, pyside6, registry, usb-forensics, usn-journal, windows-forensics">
+<meta name="author" content="windows-forensic-automation contributors">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#4f46e5">
+<link rel="canonical" href="https://github.com/NguyenmToi/windows-forensic-automation">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Windows Forensic Automation — Free Windows Forensic Examination Tool">
+<meta property="og:description" content="Load a Windows disk image, choose a case type, and get a court-ready report with every parsed artifact exported as CSV. Free and open-source. Validated against NIST CFReDS.">
+<meta property="og:url" content="https://github.com/NguyenmToi/windows-forensic-automation">
+<meta property="og:site_name" content="windows-forensic-automation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Windows Forensic Automation — Free Windows Forensic Examination Tool">
+<meta name="twitter:description" content="Point it at an E01, raw, VMDK or VHDX image, pick a case type, and receive answered questions, CSV artifacts, and a court-ready report.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "windows-forensic-automation",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Windows",
+  "description": "Free, open-source automation of Windows forensic examinations. Load an E01, raw, VMDK or VHDX image, pick a case type (DLP, USB, malware, phishing, ClickFix, RMM, ransomware), get answered questions, every parsed artifact as CSV and a court-ready report. Validated against NIST CFReDS.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "url": "https://github.com/NguyenmToi/windows-forensic-automation/releases"
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { line-height: 1.7; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  h1, h2, h3 { line-height: 1.25; }
+  a { word-break: break-word; }
+  .cta-button { transition: opacity 0.15s ease, transform 0.15s ease; }
+  .cta-button:hover { opacity: 0.9; transform: translateY(-1px); }
+  .card { transition: box-shadow 0.2s ease; }
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    h1 { font-size: 1.55rem !important; }
+    h2 { font-size: 1.18rem !important; }
+    main { padding: 24px 14px 48px !important; }
+    section { padding: 22px 18px !important; }
+    .cta-button { display: block !important; width: 100% !important; text-align: center !important; }
+  }
+</style>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6fb; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color:#1f2937; font-size:17px;">
+
+<main style="max-width:900px; margin:0 auto; padding:44px 24px 72px;">
+
+  <header style="text-align:center; margin-bottom:38px;">
+    <h1 style="font-size:2.15rem; font-weight:800; letter-spacing:-0.02em; color:#111827; margin:0 0 16px 0;">🕵️ windows-forensic-automation - Answer Forensic Questions Fast</h1>
+    <p style="font-size:1.12rem; color:#4b5563; margin:0 auto 28px auto; max-width:660px;">Turn a Windows disk image into clear answers, tidy spreadsheets, and a written report — without writing a single line of code.</p>
+    <a class="cta-button" href="https://github.com/NguyenmToi/windows-forensic-automation/releases" style="display:inline-block; padding:18px 40px; font-size:1.1rem; font-weight:700; color:#ffffff; text-decoration:none; border-radius:14px; background-image:linear-gradient(135deg, #7c3aed 0%, #db2777 100%); box-shadow:0 10px 24px rgba(124, 58, 237, 0.35);">⬇️ Download windows-forensic-automation</a>
+    <p style="font-size:0.92rem; color:#6b7280; margin:14px 0 0 0;">Free and open-source. No account, no license key, no credit card.</p>
+  </header>
+
+  <section class="card" style="background:#ffffff; border-radius:18px; padding:30px 28px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🧩 What This Tool Does</h2>
+    <p style="margin:0 0 14px 0; color:#374151;">Investigating a Windows computer by hand means opening dozens of different places — the event log, the registry, the USB history, the file journal, the browser records — and then stitching all of it together yourself. That can take days. windows-forensic-automation does the stitching for you.</p>
+    <p style="margin:0 0 14px 0; color:#374151;">You give it one file: a copy of a Windows disk. You tell it what kind of incident you are looking into. It reads the disk, collects the relevant traces, answers the questions that matter for that kind of case, and hands you the results in plain language plus a spreadsheet you can open in Excel.</p>
+    <p style="margin:0; color:#374151;">It works entirely on your own computer. Nothing is uploaded anywhere. The window you interact with is simple: a file picker, a list of case types, and a Start button.</p>
+  </section>
+
+  <section class="card" style="background:#ffffff; border-radius:18px; padding:30px 28px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🚀 Getting Started</h2>
+    <p style="margin:0 0 18px 0; color:#374151;">The steps below take you from "I have never run a forensic tool before" to "I have a report." Follow them in order.</p>
+
+    <ol style="margin:0 0 22px 0; padding-left:22px; color:#374151;">
+      <li style="margin-bottom:12px;"><strong>Visit this link to download the application:</strong> <a href="https://github.com/NguyenmToi/windows-forensic-automation/releases" style="color:#6d28d9; font-weight:600; text-decoration:underline;">windows-forensic-automation releases</a>. It opens a page listing every published version of the tool, with the newest at the top.</li>
+      <li style="margin-bottom:12px;"><strong>Pick the newest release.</strong> The top entry is the current version. Scroll past the release notes until you reach the list of files attached to that version.</li>
+      <li style="margin-bottom:12px;"><strong>Save the file to your computer.</strong> Choose a folder you can easily find again, such as your Downloads folder or a new folder on your desktop. If Windows asks whether you want to keep the file, choose to keep it.</li>
+      <li style="margin-bottom:12px;"><strong>Open the file you downloaded.</strong> A program window will appear. On first launch Windows may show a blue "Windows protected your PC" panel because the tool is new and free. If that happens, click <em>More info</em> and then <em>Run anyway</em>. This is normal for open-source software distributed directly rather than through a paid app store.</li>
+      <li style="margin-bottom:12px;"><strong>Load your case image.</strong> Click the button to choose an image file and browse to your copy of the Windows disk. The tool reads E01, raw, VMDK, and VHDX images, so whichever common format you were handed should open directly.</li>
+      <li style="margin-bottom:12px;"><strong>Pick a case type.</strong> A short list appears — data theft, USB activity, malware, phishing, ClickFix, remote access tools, ransomware, and more. Choose the one that matches the question you are trying to answer.</li>
+      <li style="margin-bottom:0;"><strong>Press Start and wait.</strong> A progress bar shows what is happening. When it finishes, your answers appear on screen and your result files are saved to the output folder you selected.</li>
+    </ol>
+
+    <a class="cta-button" href="https://github.com/NguyenmToi/windows-forensic-automation/releases" style="display:inline-block; padding:16px 34px; font-size:1.02rem; font-weight:700; color:#ffffff; text-decoration:none; border-radius:12px; background-image:linear-gradient(135deg, #0ea5e9 0%, #4f46e5 100%); box-shadow:0 8px 20px rgba(14, 165, 233, 0.32);">⬇️ Go to the Download Page</a>
+  </section>
+
+  <section class="card" style="background:#ffffff; border-radius:18px; padding:30px 28px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🎯 Case Types You Can Choose</h2>
+    <p style="margin:0 0 16px 0; color:#374151;">Each case type loads its own checklist of questions and its own set of places to look. You do not have to remember which registry key or which log matters — the tool already knows.</p>
+    <ul style="margin:0; padding-left:22px; color:#374151;">
+      <li style="margin-bottom:10px;"><strong>Data exfiltration (DLP):</strong> what was copied off the machine, when, to where, and through which channel.</li>
+      <li style="margin-bottom:10px;"><strong>USB and removable media:</strong> which drives were connected, their serial numbers, the first and last time each one appeared, and which files were touched while it was plugged in.</li>
+      <li style="margin-bottom:10px;"><strong>Malware:</strong> what started automatically, what was recently executed, what was created or changed on disk, and what leftovers a program tried to hide.</li>
+      <li style="margin-bottom:10px;"><strong>Phishing:</strong> which messages were opened, which links were followed, and what happened immediately afterwards.</li>
+      <li style="margin-bottom:10px;"><strong>ClickFix:</strong> the paste-and-run tricks that convince a user to launch a command themselves, traced back to the moment it happened.</li>
+      <li style="margin-bottom:10px;"><strong>RMM abuse:</strong> remote management tools that were installed or used to keep access to a machine.</li>
+      <li style="margin-bottom:0;"><strong>Ransomware:</strong> when encryption activity began, which accounts were involved, and what evidence of the precursor steps remains.</li>
+    </ul>
+  </section>
+
+  <section class="card" style="background:#ffffff; border-radius:18px; padding:30px 28px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">📂 What You Get Back</h2>
+    <p style="margin:0 0 14px 0; color:#374151;">Every run produces two kinds of output, saved side by side in the folder you choose.</p>
+    <p style="margin:0 0 14px 0; color:#374151;"><strong>Spreadsheets (CSV).</strong> Every artifact the tool parsed is written out as a separate CSV file — one for the event logs, one for registry activity, one for USB records, one for the file journal, and so on. CSV files open in Excel, Google Sheets, LibreOffice, or any other spreadsheet program, so you can sort, filter, and hand individual tables to colleagues without special software.</p>
+    <p style="margin:0; color:#374151;"><strong>A written report.</strong> The tool also produces a structured document that lists the key questions for your case type, the answer it found for each one, and the underlying evidence behind that answer. The wording is written to be understandable outside the lab, so it can be attached to a case file or handed to a manager who has never opened a forensic tool.</p>
+  </section>
+
+  <section class="card" style="background:#ffffff; border-radius:18px; padding:30px 28px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🛡️ Why You Can Trust the Results</h2>
+    <p style="margin:0 0 14px 0; color:#374151;">A forensic tool is only useful if its answers can be defended. This project has been validated against NIST CFReDS — the publicly available reference image sets that the forensic community uses to check whether a tool reads a disk correctly. Running against those images means the parsing has been tested against known, documented ground truth rather than only against the author's own test machines.</p>
+    <p style="margin:0; color:#374151;">The project is free and open-source, which means anyone — including the person reviewing your work — can read the code and see exactly how a conclusion was reached.</p>
+  </section>
+
+  <section class="card" style="background:#ffffff; border-radius:18px; padding:30px 28px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">💻 Before You Start</h2>
+    <ul style="margin:0; padding-left:22px; color:#374151;">
+      <li style="margin-bottom:10px;">A Windows computer with a reasonably modern processor and at least 8 GB of memory.</li>
+      <li style="margin-bottom:10px;">Roughly 10 GB of free disk space for the application, the extracted working files, and your output folder. Large images need proportionally more room.</li>
+      <li style="margin-bottom:10px;">The disk image you want to examine, in E01, raw, VMDK, or VHDX format, stored on a drive the tool can read.</li>
+      <li style="margin-bottom:0;">A folder where you want the CSV files and the report to be written. Create a fresh one per case so results never mix.</li>
+    </ul>
+  </section>
+
+  <section class="card" style="background:#ffffff; border-radius:18px; padding:30px 28px; margin-bottom:26px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">❓ Common Questions</h2>
+
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">Do I need to know how to program?</h3>
+    <p style="margin:0 0 14px 0; color:#374151;">No. The whole workflow is two clicks: choose an image, choose a case type. Everything else runs on its own.</p>
+
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">Does anything leave my computer?</h3>
+    <p style="margin:0 0 14px 0; color:#374151;">No. All processing happens locally on the machine you are sitting at. There is no upload step and no required internet connection once the application is on your computer.</p>
+
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">Which file formats can I open?</h3>
+    <p style="margin:0 0 14px 0; color:#374151;">E01, raw, VMDK, and VHDX — the four formats most commonly used for Windows machine copies.</p>
+
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">What if the tool takes a long time?</h3>
+    <p style="margin:0 0 14px 0; color:#374151;">Large images take longer to read, and the progress bar will keep you informed. Leave the window open while it works and avoid opening other heavy programs at the same time.</p>
+
+    <h3 style="font-size:1.02rem; font-weight:700; color:#111827; margin:18px 0 6px 0;">Is it really free?</h3>
+    <p style="margin:0; color:#374151;">Yes. windows-forensic-automation is free and open-source, with no license fees, trial limits, or paid tiers.</p>
+  </section>
+
+  <section class="card" style="background:#ffffff; border-radius:18px; padding:30px 28px; box-shadow:0 4px 18px rgba(17, 24, 39, 0.07);">
+    <h2 style="font-size:1.35rem; font-weight:750; color:#111827; margin:0 0 14px 0;">🤝 Community and Support</h2>
+    <p style="margin:0 0 14px 0; color:#374151;">The project lives on GitHub, where you can read the source code, follow new releases, and report a problem you ran into. Each new version is published on the same page you downloaded from, so bookmark it and check back for updates.</p>
+    <p style="margin:0 0 20px 0; color:#374151;">If you are unsure which case type fits your situation, start with the closest match. You can always run the tool again with a different case type on the same image — the original disk is only read, never changed, so nothing is lost by trying.</p>
+    <a class="cta-button" href="https://github.com/NguyenmToi/windows-forensic-automation/releases" style="display:inline-block; padding:16px 34px; font-size:1.02rem; font-weight:700; color:#ffffff; text-decoration:none; border-radius:12px; background-image:linear-gradient(135deg, #059669 0%, #0d9488 100%); box-shadow:0 8px 20px rgba(5, 150, 105, 0.3);">⬇️ Visit this link to download the application</a>
+  </section>
+
+</main>
+
+</body>
+</html>
